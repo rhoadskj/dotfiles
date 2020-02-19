@@ -88,7 +88,7 @@ client.urgent               $red1 $red2 $blk1 $red2 $red2
 
 default_border pixel 1
 default_floating_border normal 1
-gaps inner 8
+gaps inner 10
 
 # modes ------------------------------------------------------------------------------------------
 set $power_options (1) Shutdown, (2) Restart
