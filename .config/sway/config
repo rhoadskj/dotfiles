@@ -1,0 +1,200 @@
+# @rhoadskj
+# github.com/rhoadskj/dotfiles
+
+# variables --------------------------------------------------------------------------------------
+# 'extra' is used in place of shift, because it is easier on my wrists.
+set $mod Mod4
+set $extra Alt
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "0"
+
+# fonts ------------------------------------------------------------------------------------------
+font "Source Code Pro 10"
+
+# colors -----------------------------------------------------------------------------------------
+set $blk1 #282828
+set $blk2 #928374
+
+set $wht1 #a89984
+set $wht2 #ebdbb2
+
+set $red1 #cc241d
+set $red2 #fb4934
+
+set $grn1 #98971a
+set $grn2 #b8bb26
+
+set $ylw1 #d79921
+set $ylw2 #fabd2f
+
+set $blu1 #458588
+set $blu2 #83a598
+
+set $pur1 #b16286
+set $pur2 #d3869b
+
+set $aqu1 #689d6a
+set $aqu2 #8ec07c
+
+# inputs -----------------------------------------------------------------------------------------
+# use 'swaymsg -t get_inputs' to get yours.
+set $keyboard 5426:532:Razer_Razer_BlackWidow_Ultimate_2016
+set $mouse 1133:49280:Logitech_Gaming_Mouse_G303
+
+# preferred applications -------------------------------------------------------------------------
+set $menu wofi
+set $term kitty
+set $browser firefox
+set $files thunar
+set $music spotify
+
+# preferred workspaces ---------------------------------------------------------------------------
+for_window [class="Thunderbird"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws0
+
+# wallpaper --------------------------------------------------------------------------------------
+output * bg ~/img/wallpaper.jpg fill
+
+# input configuration ----------------------------------------------------------------------------
+# read 'man 5 sway_inputs' for more info.
+input $keyboard {
+    xkb_numlock enabled
+    xkb_options numpad:mac
+}
+
+input $mouse {
+    accel_profile flat
+}
+
+# bar --------------------------------------------------------------------------------------------
+bar {
+    swaybar_command waybar
+}
+
+# window decorations -----------------------------------------------------------------------------
+client.focused              $aqu1 $aqu2 $blk1 $aqu2 $aqu2
+client.focused_inactive     $wht1 $wht2 $blk1 $wht2 $wht2
+client.unfocused            $wht1 $wht2 $blk1 $wht2 $wht2
+client.urgent               $red1 $red2 $blk1 $red2 $red2
+
+default_border pixel 1
+default_floating_border normal 1
+gaps inner 8
+
+# modes ------------------------------------------------------------------------------------------
+set $power_options (1) Shutdown, (2) Restart
+mode "$power_options" {
+    bindsym 1 exec shutdown now
+    bindsym 2 exec shutdown -r now
+    bindsym Escape mode "default"
+}
+
+# key bindings -----------------------------------------------------------------------------------
+# launcher shortcuts.
+bindsym $mod+Return exec $menu
+bindsym $mod+t exec $term
+bindsym $mod+r exec $browser
+bindsym $mod+f exec $files
+bindsym $mod+s exec $music
+
+# kill your current window.
+bindsym $mod+Backspace kill
+
+# show shutdown / restart options.
+bindsym $mod+equal mode "$power_options"
+
+# reload the configuration file.
+bindsym $mod+grave reload
+
+# move your current window.
+bindsym $mod+Left move left
+bindsym $mod+Right move right
+bindsym $mod+Up move up
+bindsym $mod+Down move down
+
+# make your window fullscreen.
+bindsym $mod+v fullscreen
+
+# move your focus.
+bindsym $mod+$extra+Left focus left
+bindsym $mod+$extra+Right focus right
+bindsym $mod+$extra+Up focus up
+bindsym $mod+$extra+Down focus down
+
+# switch to workspace.
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# move focused container to workspace.
+bindsym $mod+$extra+1 move container to workspace $ws1
+bindsym $mod+$extra+2 move container to workspace $ws2
+bindsym $mod+$extra+3 move container to workspace $ws3
+bindsym $mod+$extra+4 move container to workspace $ws4
+bindsym $mod+$extra+5 move container to workspace $ws5
+bindsym $mod+$extra+6 move container to workspace $ws6
+bindsym $mod+$extra+7 move container to workspace $ws7
+bindsym $mod+$extra+8 move container to workspace $ws8
+bindsym $mod+$extra+9 move container to workspace $ws9
+bindsym $mod+$extra+0 move container to workspace $ws0
+
+# switch to workspace, but with the numpad.
+bindsym $mod+KP_1 workspace $ws1
+bindsym $mod+KP_2 workspace $ws2
+bindsym $mod+KP_3 workspace $ws3
+bindsym $mod+KP_4 workspace $ws4
+bindsym $mod+KP_5 workspace $ws5
+bindsym $mod+KP_6 workspace $ws6
+bindsym $mod+KP_7 workspace $ws7
+bindsym $mod+KP_8 workspace $ws8
+bindsym $mod+KP_9 workspace $ws9
+bindsym $mod+KP_0 workspace $ws0
+
+# move focused container to workspace, but with the numpad.
+bindsym $mod+$extra+KP_1 move container to workspace $ws1
+bindsym $mod+$extra+KP_2 move container to workspace $ws2
+bindsym $mod+$extra+KP_3 move container to workspace $ws3
+bindsym $mod+$extra+KP_4 move container to workspace $ws4
+bindsym $mod+$extra+KP_5 move container to workspace $ws5
+bindsym $mod+$extra+KP_6 move container to workspace $ws6
+bindsym $mod+$extra+KP_7 move container to workspace $ws7
+bindsym $mod+$extra+KP_8 move container to workspace $ws8
+bindsym $mod+$extra+KP_9 move container to workspace $ws9
+bindsym $mod+$extra+KP_0 move container to workspace $ws0
+
+# switch the focus to floating or tiled.
+bindsym $mod+space floating toggle
+
+# swap focus between the tiling area and the floating area.
+bindsym $mod+$extra+space focus mode_toggle
+
+# use the mod button to move / resize windows
+floating_modifier $mod normal
+
+# media controls ---------------------------------------------------------------------------------
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +1%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -1%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
+bindsym XF86AudioPlay exec playerctl -p spotify play-pause
+bindsym XF86AudioNext exec playerctl -p spotify next
+bindsym XF86AudioPrev exec playerctl -p spotify previous
+
+# startups ---------------------------------------------------------------------------------------
+exec mako

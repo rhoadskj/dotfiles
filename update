@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# @rhoadskj
+# github.com/rhoadskj/dotfiles
+
+if [ $EUID = 0 ]; then
+    echo "don't run this at root! it will put stuff in the wrong place."
+    exit 1
+fi
+
+cp -v .bashrc $HOME/
+cp -v .bash_profile $HOME/
+cp -v .dir_colors $HOME/
+cp -v .gitconfig $HOME/
+cp -v .vimrc $HOME/
+cp -vr .config $HOME
+cp -vr .vim $HOME

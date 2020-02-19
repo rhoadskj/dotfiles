@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# @rhoads
+# github.com/rhoadskj/dotfiles
+
+if [ "$EUID" -ne 0 ]
+    then echo "this script must be run as root!"
+    exit
+fi
+
+sudo dnf -y install \
+sway \
+mesa-dri-drivers \
+mako \
+wofi \
+kitty \
+firefox \
+vim \
+git \
+wl-clipboard \
+alsa-lib \
+alsa-utils \
+pulseaudio \
+pulseaudio-utils \
+playerctl
+
+sudo dnf -y install \
+cmake \
+meson \
+gcc-c++ \
+scdoc \
+clang-tools-extra \
+libinput-devel \
+gtkmm30-devel \
+jsoncpp-devel \
+libappindicator-gtk3-devel \
+libdbusmenu-gtk3-devel \
+pulseaudio-libs-devel \
+wayland-devel \
+wlroots-devel \
+libsigc++-devel \
+libnl3-devel \
+libudev-devel \
+fmt-devel \
+libmpdclient-devel \
+spdlog-devel \
+gtk-layer-shell \
+gtk3-devel \
+gobject-introspection \
+fontawesome-fonts
+
+git clone https://github.com/Alexays/Waybar
+cd Waybar
+sudo meson build
+sudo ninja -C build install
+cd ..
+sudo rm -rf Waybar

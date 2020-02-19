@@ -1,0 +1,200 @@
+# @rhoadskj
+# github.com/rhoadskj/dotfiles
+
+# DON'T EDIT ANYTHING BELOW THIS -----------------------------------------------------------------
+
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+
+# Copyright (C) 1996-219 Free Software Foundation, Inc.
+# Copying and distribution of this file, with or without modification,
+# are permitted provided the copyright notice and this notice are preserved.
+
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
+# slackware version of dircolors) are recognized but ignored.
+
+# For compatibility, the pattern "^COLOR.*none" is recognized as a way to
+# disable colorization.  See https://bugzilla.redhat.com/1349579 for details.
+
+# Below are TERM entries, which can be a glob patterns, to match
+# against the TERM environment variable to determine if it is colorizable.
+TERM Eterm
+TERM ansi
+TERM *color*
+TERM con[0-9]*x[0-9]*
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM gnome
+TERM hurd
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mlterm
+TERM putty
+TERM rxvt*
+TERM screen*
+TERM st
+TERM terminator
+TERM tmux*
+TERM vt100
+TERM xterm*
+
+# DON'T EDIT ANYTHING ABOVE THIS -----------------------------------------------------------------
+
+# FORMAT                |   COLOR         FOREGROUND      BACKGROUND
+# normal        0       |   black         30              40
+# bold          1       |   red           31              41
+# underline     4       |   green         32              42
+# flashing      5       |   yellow        33              43
+# reverse       7       |   blue          34              44
+# invisible     8       |   magenta       35              45
+#                       |   cyan          36              46
+#                       |   white         37              47
+
+NORMAL 0	            # no color code at all
+FILE 0	                    # regular file: use no color at all
+RESET 0		            # reset to "normal" color
+DIR 1;36	            # directory
+LINK 1;34                   # symbolic link.
+MULTIHARDLINK 0	            # regular file with more than one link
+FIFO 4;36	            # pipe
+SOCK 1;35	            # socket
+DOOR 1;35	            # door
+BLK 1;33	            # block device driver
+CHR 1;33	            # character device driver
+ORPHAN 5;31                 # symlink to nonexistent file
+MISSING 5;37;41             # ... and the files they point to
+SETUID 37;41	            # file that is setuid (u+s)
+SETGID 30;45	            # file that is setgid (g+s)
+CAPABILITY 30;46	    # file with capability
+STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable
+OTHER_WRITABLE 30;43        # dir that is other-writable and not sticky
+STICKY 30;44	            # dir that is not other-writable and sticky
+
+# This is for files with execute permission:
+EXEC 1;37
+
+ # archives or compressed (bright red)
+.tar 1;46
+.tgz 1;46
+.arc 1;46
+.arj 1;46
+.taz 1;46
+.lha 1;46
+.lz4 1;46
+.lzh 1;46
+.lzma 1;46
+.tlz 1;46
+.txz 1;46
+.tzo 1;46
+.t7z 1;46
+.zip 1;46
+.z   1;46
+.dz  1;46
+.gz  1;46
+.lrz 1;46
+.lz  1;46
+.lzo 1;46
+.xz  1;46
+.zst 1;46
+.tzst 1;46
+.bz2 1;46
+.bz  1;46
+.tbz 1;46
+.tbz2 1;46
+.tz  1;46
+.deb 1;46
+.rpm 1;46
+.jar 1;46
+.war 1;46
+.ear 1;46
+.sar 1;46
+.rar 1;46
+.alz 1;46
+.ace 1;46
+.zoo 1;46
+.cpio 1;46
+.7z  1;46
+.rz  1;46
+.cab 1;46
+.wim 1;46
+.swm 1;46
+.dwm 1;46
+.esd 1;46
+
+# image formats
+.jpg 1;35
+.jpeg 1;35
+.mjpg 1;35
+.mjpeg 1;35
+.gif 1;35
+.bmp 1;35
+.pbm 1;35
+.pgm 1;35
+.ppm 1;35
+.tga 1;35
+.xbm 1;35
+.xpm 1;35
+.tif 1;35
+.tiff 1;35
+.png 1;35
+.svg 1;35
+.svgz 1;35
+.mng 1;35
+.pcx 1;35
+.mov 1;35
+.mpg 1;35
+.mpeg 1;35
+.m2v 1;35
+.mkv 1;35
+.webm 1;35
+.ogm 1;35
+.mp4 1;35
+.m4v 1;35
+.mp4v 1;35
+.vob 1;35
+.qt  1;35
+.nuv 1;35
+.wmv 1;35
+.asf 1;35
+.rm  1;35
+.rmvb 1;35
+.flc 1;35
+.avi 1;35
+.fli 1;35
+.flv 1;35
+.gl 1;35
+.dl 1;35
+.xcf 1;35
+.xwd 1;35
+.yuv 1;35
+.cgm 1;35
+.emf 1;35
+
+# https://wiki.xiph.org/MIME_Types_and_File_Extensions
+.ogv 1;35
+.ogx 1;35
+
+# audio formats
+.aac 1;33
+.au 1;33
+.flac 1;33
+.m4a 1;33
+.mid 1;33
+.midi 1;33
+.mka 1;33
+.mp3 1;33
+.mpc 1;33
+.ogg 1;33
+.ra 1;33
+.wav 1;33
+
+# https://wiki.xiph.org/MIME_Types_and_File_Extensions
+.oga 1;33
+.opus 1;33
+.spx 1;33
+.xspf 1;33
