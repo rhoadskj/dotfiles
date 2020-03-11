@@ -17,12 +17,14 @@ kitty \
 firefox \
 vim \
 git \
+thunar \
 wl-clipboard \
 alsa-lib \
 alsa-utils \
 pulseaudio \
 pulseaudio-utils \
-playerctl
+playerctl \
+light
 
 sudo dnf -y install \
 cmake \

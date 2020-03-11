@@ -1,15 +1,14 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 22,
+  "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
+    "modules-center": ["tray"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock"],
+    "height": 28,
     "sway/window": {
       "max-length": 50
     },
     "clock": {
-      "format-alt": "{%D %H:%M}"
+      "format-alt": "{:%a, %d. %b  %H:%M}"
     },
     "tray": {
       "icon-size": 15,
@@ -18,9 +17,9 @@
     "network": {
       "interface": "wlp2s0",
       "format": "{ifname}",
-      "format-wifi": " {essid}",
-      "format-ethernet": " {ifname} ",
-      "format-disconnected": "",
+      "format-wifi": "{essid}",
+      "format-ethernet": "{ifname}",
+      "format-disconnected": "",
       "tooltip-format": "{ifname}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "eth {ifname} ",
@@ -30,43 +29,36 @@
     "network": {
       "interface": "*",
       "format": "{ifname}",
-      "format-wifi": " {essid}",
-      "format-ethernet": " {ifname} ",
-      "format-disconnected": "",
+      "format-wifi": "{essid}",
+      "format-ethernet": "{ifname}",
+      "format-disconnected": "",
       "tooltip-format": "{ifname}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "eth {ifname}",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
     },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
-    },
     "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-muted": "",
+      "format": "{volume}%",
+      "format-muted": "{volume}X",
       "format-icons": {
-        "headphones": "",
-        "default": ["", ""]
+        "headphones": "",
+        "default": ["", ""]
       },
       "scroll-step": 1,
       "on-click": "pavucontrol"
     },
     "battery": {
-      "bat": "BAT0",
       "interval": 60,
       "states": {
         "good": 80,
         "warning": 50,
         "critical": 35
       },
-      "format": "{icon} {capacity}%",
-      "format-icons": ["", ""]
+      "format": "{capacity}%",
+      "format-icons": ["", ""]
       },
       "max-length": 25
-    },
+    }
 }
+
