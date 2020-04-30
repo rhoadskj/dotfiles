@@ -15,3 +15,4 @@ cp -v .gitconfig $HOME/
 cp -v .vimrc $HOME/
 cp -vr .config $HOME
 cp -vr .vim $HOME
+cp -v wallpaper.png $HOME/img/

@@ -53,7 +53,7 @@ set $files thunar
 set $music spotify
 
 # wallpaper --------------------------------------------------------------------------------------
-output * bg ~/img/wallpaper.jpg fill
+output * bg ~/img/wallpaper.png fill
 
 # input configuration ----------------------------------------------------------------------------
 # read 'man 5 sway_inputs' for more info.
