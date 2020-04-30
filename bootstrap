@@ -57,3 +57,7 @@ sudo meson build
 sudo ninja -C build install
 cd ..
 sudo rm -rf Waybar
+
+mkdir ~/desk
+mkdir ~/down
+mkdir ~/img
