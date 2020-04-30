@@ -182,9 +182,9 @@ bindsym $mod+$extra+space focus mode_toggle
 floating_modifier $mod normal
 
 # media controls ---------------------------------------------------------------------------------
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +1%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -1%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -2%
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 
 bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 bindsym XF86AudioNext exec playerctl -p spotify next

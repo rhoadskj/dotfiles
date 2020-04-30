@@ -23,6 +23,7 @@ alsa-lib \
 alsa-utils \
 pulseaudio \
 pulseaudio-utils \
+pavucontrol \
 playerctl \
 light
 

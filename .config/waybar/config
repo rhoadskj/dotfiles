@@ -45,7 +45,7 @@
         "headphones": "",
         "default": ["", ""]
       },
-      "scroll-step": 1,
+      "scroll-step": 2,
       "on-click": "pavucontrol"
     },
     "battery": {
