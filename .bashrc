@@ -27,3 +27,6 @@ alias grep="grep --color"
 alias tree="tree -C"
 alias shutdown="shutdown now"
 alias restart="shutdown -r now"
+
+# functions
+cl() { cd "$1" && ls; }

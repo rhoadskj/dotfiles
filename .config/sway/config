@@ -193,5 +193,6 @@ bindsym XF86AudioPrev exec playerctl -p spotify previous
 # brightness controls ----------------------------------------------------------------------------
 bindsym XF86MonBrightnessUp exec light -A 1
 bindsym XF86MonBrightnessDown exec light -U 1
+
 # startups ---------------------------------------------------------------------------------------
 exec mako
