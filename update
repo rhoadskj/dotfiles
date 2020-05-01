@@ -8,6 +8,10 @@ if [ $EUID = 0 ]; then
     exit 1
 fi
 
+mkdir -p $HOME/desk
+mkdir -p $HOME/down
+mkdir -p $HOME/img
+
 cp -v .bashrc $HOME/
 cp -v .bash_profile $HOME/
 cp -v .dir_colors $HOME/
