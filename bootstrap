@@ -25,7 +25,8 @@ pulseaudio \
 pulseaudio-utils \
 pavucontrol \
 playerctl \
-light
+light \
+snapd
 
 sudo dnf -y install \
 cmake \
