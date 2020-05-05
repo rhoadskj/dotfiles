@@ -26,6 +26,7 @@ pulseaudio-utils \
 pavucontrol \
 playerctl \
 light \
+google-noto-* \
 snapd
 
 sudo dnf -y install \
