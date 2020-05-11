@@ -31,3 +31,4 @@ alias q="clear"
 
 # functions
 cl() { cd "$1" && ls; }
+ct() { cd "$1" && tree; }
