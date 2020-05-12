@@ -11,6 +11,7 @@ fi
 mkdir -p $HOME/desk
 mkdir -p $HOME/down
 mkdir -p $HOME/img
+mkdir -p $HOME/img/screenshots
 
 cp -v .bashrc $HOME/
 cp -v .bash_profile $HOME/

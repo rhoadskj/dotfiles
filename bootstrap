@@ -27,6 +27,8 @@ pavucontrol \
 playerctl \
 light \
 google-noto-* \
+grim \
+slurp \
 snapd
 
 sudo dnf -y install \
