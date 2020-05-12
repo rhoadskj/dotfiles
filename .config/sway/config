@@ -48,7 +48,7 @@ set $aqu2 #8ec07c
 # preferred applications -------------------------------------------------------------------------
 set $menu wofi
 set $term kitty
-set $browser firefox
+set $browser firefox-wayland
 set $files thunar
 set $music spotify
 

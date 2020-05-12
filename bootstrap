@@ -14,7 +14,7 @@ mesa-dri-drivers \
 mako \
 wofi \
 kitty \
-firefox \
+firefox-wayland \
 vim \
 git \
 thunar \
