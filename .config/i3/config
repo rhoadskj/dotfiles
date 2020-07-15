@@ -55,8 +55,11 @@ set $music spotify
 # polybar ----------------------------------------------------------------------------------------
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# ------------------------------------------------------------------------------------------------
-exec --no-startup-id feh --bg-fill ~/img/wallpaper.png
+# wallpaper --------------------------------------------------------------------------------------
+exec --no-startup-id feh --bg-fill ~/img/wallpaper.pnga
+
+# input ------------------------------------------------------------------------------------------
+exec --no-startup-id xinput set-prop 8 286 -0.8
 
 # window decorations -----------------------------------------------------------------------------
 client.focused              $aqu1 $aqu2 $blk1 $aqu2 $aqu2
