@@ -52,24 +52,15 @@ set $browser firefox
 set $files thunar
 set $music spotify
 
-# wallpaper --------------------------------------------------------------------------------------
-output * bg ~/img/wallpaper.png fill
-
 # polybar ----------------------------------------------------------------------------------------
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# input configuration ----------------------------------------------------------------------------
-input type:keyboard {
-    xkb_numlock enabled
-    xkb_options numpad:mac
-}
-
-input * {
-    accel_profile flat
-    click_method button_areas
-    scroll_method edge
-    tap enabled
-}
+#input * {
+#    accel_profile flat
+#    click_method button_areas
+#    scroll_method edge
+#    tap enabled
+#}
 
 # window decorations -----------------------------------------------------------------------------
 client.focused              $aqu1 $aqu2 $blk1 $aqu2 $aqu2
