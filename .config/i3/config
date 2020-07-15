@@ -55,12 +55,8 @@ set $music spotify
 # polybar ----------------------------------------------------------------------------------------
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-#input * {
-#    accel_profile flat
-#    click_method button_areas
-#    scroll_method edge
-#    tap enabled
-#}
+# ------------------------------------------------------------------------------------------------
+exec --no-startup-id feh --bg-fill ~/img/wallpaper.png
 
 # window decorations -----------------------------------------------------------------------------
 client.focused              $aqu1 $aqu2 $blk1 $aqu2 $aqu2
