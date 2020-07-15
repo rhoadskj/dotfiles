@@ -46,17 +46,19 @@ set $aqu1 #689d6a
 set $aqu2 #8ec07c
 
 # preferred applications -------------------------------------------------------------------------
-set $menu wofi
+set $menu rofi
 set $term kitty
-set $browser firefox-wayland
+set $browser firefox
 set $files thunar
 set $music spotify
 
 # wallpaper --------------------------------------------------------------------------------------
 output * bg ~/img/wallpaper.png fill
 
+# polybar ----------------------------------------------------------------------------------------
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 # input configuration ----------------------------------------------------------------------------
-# read 'man 5 sway_inputs' for more info.
 input type:keyboard {
     xkb_numlock enabled
     xkb_options numpad:mac
@@ -67,11 +69,6 @@ input * {
     click_method button_areas
     scroll_method edge
     tap enabled
-}
-
-# bar --------------------------------------------------------------------------------------------
-bar {
-    swaybar_command waybar
 }
 
 # window decorations -----------------------------------------------------------------------------
@@ -189,16 +186,3 @@ bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 bindsym XF86AudioNext exec playerctl -p spotify next
 bindsym XF86AudioPrev exec playerctl -p spotify previous
-
-# brightness controls ----------------------------------------------------------------------------
-bindsym XF86MonBrightnessUp exec light -A 1
-bindsym XF86MonBrightnessDown exec light -U 1
-
-# screenshotting ---------------------------------------------------------------------------------
-bindsym --release Print exec grim - | wl-copy
-bindsym --release $mod+Print exec grim ~/img/screenshots/$(date +%s).png
-bindsym --release $extra+Print exec grim -g "$(slurp)" - | wl-copy
-bindsym --release $mod+$extra+Print exec grim -g "$(slurp)" ~/img/screenshots/$(date +%s).png
-
-# startups ---------------------------------------------------------------------------------------
-exec mako
