@@ -9,57 +9,29 @@ if [ "$EUID" -ne 0 ]
 fi
 
 sudo dnf -y install \
-sway \
+i3 \
+sddm \
 mesa-dri-drivers \
-mako \
-wofi \
+polybar \
+rofi \
 kitty \
-firefox-wayland \
+firefox \
 vim \
 git \
 tree \
-thunar \
-wl-clipboard \
+# thunar \ I'll come back to this
+# wl-clipboard \ need a new clipboard
 alsa-lib \
 alsa-utils \
 pulseaudio \
 pulseaudio-utils \
 pavucontrol \
 playerctl \
-light \
+# light \ check to make sure this works on X
 google-noto-* \
-grim \
-slurp \
+# grim \ might be wayland only?
+# slurp \ might be wayland only?
 snapd
 
-sudo dnf -y install \
-cmake \
-meson \
-gcc-c++ \
-scdoc \
-clang-tools-extra \
-libinput-devel \
-gtkmm30-devel \
-jsoncpp-devel \
-libappindicator-gtk3-devel \
-libdbusmenu-gtk3-devel \
-pulseaudio-libs-devel \
-wayland-devel \
-wlroots-devel \
-libsigc++-devel \
-libnl3-devel \
-libudev-devel \
-fmt-devel \
-libmpdclient-devel \
-spdlog-devel \
-gtk-layer-shell \
-gtk3-devel \
-gobject-introspection \
-fontawesome-fonts
-
-git clone https://github.com/Alexays/Waybar
-cd Waybar
-sudo meson build
-sudo ninja -C build install
-cd ..
-sudo rm -rf Waybar
+sudo systemctl set-default graphical.target
+sudo systemctl reboot
