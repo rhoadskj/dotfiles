@@ -11,9 +11,9 @@ then
 fi
 export PATH
 
-# if [ "$(tty)" = "/dev/tty1" ]; then
-#     exec i3
-# fi
+if [ "$(tty)" = "/dev/tty1" ]; then
+    exec i3
+fi
 
 export PS1="[\[$(tput sgr0)\]\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;12m\]@\[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$ \[$(tput sgr0)\]"
 
