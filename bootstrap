@@ -9,56 +9,56 @@ if [ "$EUID" -ne 0 ]
 fi
 
 sudo dnf -y install \
-sddm \
+sway \
 mesa-dri-drivers \
-polybar \
-feh \
-rofi \
+mako \
+wofi \
 kitty \
 firefox \
 vim \
 git \
-tree \
-xclip \
+thunar \
+wl-clipboard \
 alsa-lib \
 alsa-utils \
 pulseaudio \
 pulseaudio-utils \
 pavucontrol \
 playerctl \
+light \
 google-noto-* \
+grim \
+slurp \
 snapd
 
-sudo dnf install \
-libxcb-devel \
-xcb-util-keysyms-devel \
-xcb-util-devel \
-xcb-util-wm-devel \
-xcb-util-xrm-devel \
-yajl-devel \
-libXrandr-devel \
-startup-notification-devel \
-libev-devel \
-xcb-util-cursor-devel \
-libXinerama-devel \
-libxkbcommon-devel \
-libxkbcommon-x11-devel \
-pcre-devel \
-pango-devel \
-git \
-gcc \
-automake
+sudo dnf -y install \
+cmake \
+meson \
+gcc-c++ \
+scdoc \
+clang-tools-extra \
+libinput-devel \
+gtkmm30-devel \
+jsoncpp-devel \
+libappindicator-gtk3-devel \
+libdbusmenu-gtk3-devel \
+pulseaudio-libs-devel \
+wayland-devel \
+wlroots-devel \
+libsigc++-devel \
+libnl3-devel \
+libudev-devel \
+fmt-devel \
+libmpdclient-devel \
+spdlog-devel \
+gtk-layer-shell \
+gtk3-devel \
+gobject-introspection \
+fontawesome-fonts
 
-git clone https://www.github.com/Airblader/i3 i3-gaps && cd i3-gaps
-
-utoreconf --force --install
-rm -rf build/
-mkdir -p build && cd build/
-../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-make
-sudo make install
-
-cd .. && rm -rf i3-gaps
-
-sudo systemctl set-default graphical.target
-sudo systemctl reboot
+git clone https://github.com/Alexays/Waybar
+cd Waybar
+sudo meson build
+sudo ninja -C build install
+cd ..
+sudo rm -rf Waybar

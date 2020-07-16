@@ -4,7 +4,7 @@
 # variables --------------------------------------------------------------------------------------
 # 'extra' is used in place of shift, because it is easier on my wrists.
 set $mod Mod4
-set $extra Mod1
+set $extra Alt
 
 set $ws1 "1"
 set $ws2 "2"
@@ -46,20 +46,33 @@ set $aqu1 #689d6a
 set $aqu2 #8ec07c
 
 # preferred applications -------------------------------------------------------------------------
-set $menu rofi -show run
+set $menu wofi
 set $term kitty
 set $browser firefox
 set $files thunar
 set $music spotify
 
-# polybar ----------------------------------------------------------------------------------------
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
 # wallpaper --------------------------------------------------------------------------------------
-exec --no-startup-id feh --bg-fill ~/img/wallpaper.png
+output * bg ~/img/wallpaper.png fill
 
-# input ------------------------------------------------------------------------------------------
-exec --no-startup-id xinput set-prop 8 286 -0.875
+# input configuration ----------------------------------------------------------------------------
+# read 'man 5 sway_inputs' for more info.
+input type:keyboard {
+    xkb_numlock enabled
+    xkb_options numpad:mac
+}
+
+input * {
+    accel_profile flat
+    click_method button_areas
+    scroll_method edge
+    tap enabled
+}
+
+# bar --------------------------------------------------------------------------------------------
+bar {
+    swaybar_command waybar
+}
 
 # window decorations -----------------------------------------------------------------------------
 client.focused              $aqu1 $aqu2 $blk1 $aqu2 $aqu2
@@ -67,12 +80,9 @@ client.focused_inactive     $wht1 $wht2 $blk1 $wht2 $wht2
 client.unfocused            $wht1 $wht2 $blk1 $wht2 $wht2
 client.urgent               $red1 $red2 $blk1 $red2 $red2
 
-default_border pixel 3
-default_floating_border normal 3
-hide_edge_borders smart_no_gaps
+default_border pixel 1
+default_floating_border normal 1
 gaps inner 10
-gaps outer 10
-smart_gaps on
 
 # modes ------------------------------------------------------------------------------------------
 set $power_options (1) Shutdown, (2) Restart
@@ -91,7 +101,7 @@ bindsym $mod+f exec $files
 bindsym $mod+s exec $music
 
 # kill your current window.
-bindsym $mod+BackSpace kill
+bindsym $mod+Backspace kill
 
 # show shutdown / restart options.
 bindsym $mod+equal mode "$power_options"
@@ -169,7 +179,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+$extra+space focus mode_toggle
 
 # use the mod button to move / resize windows
-floating_modifier $mod
+floating_modifier $mod normal
 
 # media controls ---------------------------------------------------------------------------------
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +2%
@@ -179,3 +189,16 @@ bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 bindsym XF86AudioNext exec playerctl -p spotify next
 bindsym XF86AudioPrev exec playerctl -p spotify previous
+
+# brightness controls ----------------------------------------------------------------------------
+bindsym XF86MonBrightnessUp exec light -A 1
+bindsym XF86MonBrightnessDown exec light -U 1
+
+# screenshotting ---------------------------------------------------------------------------------
+bindsym --release Print exec grim - | wl-copy
+bindsym --release $mod+Print exec grim ~/img/screenshots/$(date +%s).png
+bindsym --release $extra+Print exec grim -g "$(slurp)" - | wl-copy
+bindsym --release $mod+$extra+Print exec grim -g "$(slurp)" ~/img/screenshots/$(date +%s).png
+
+# startups ---------------------------------------------------------------------------------------
+exec mako
