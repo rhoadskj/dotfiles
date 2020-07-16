@@ -17,7 +17,6 @@ kitty \
 firefox \
 vim \
 git \
-thunar \
 wl-clipboard \
 alsa-lib \
 alsa-utils \
@@ -26,7 +25,7 @@ pulseaudio-utils \
 pavucontrol \
 playerctl \
 light \
-google-noto-* \
+google-noto-*-regular \
 grim \
 slurp \
 snapd
