@@ -46,7 +46,7 @@ set $aqu1 #689d6a
 set $aqu2 #8ec07c
 
 # preferred applications -------------------------------------------------------------------------
-set $menu rofi
+set $menu rofi -show run
 set $term kitty
 set $browser firefox
 set $files thunar
@@ -67,9 +67,9 @@ client.focused_inactive     $wht1 $wht2 $blk1 $wht2 $wht2
 client.unfocused            $wht1 $wht2 $blk1 $wht2 $wht2
 client.urgent               $red1 $red2 $blk1 $red2 $red2
 
-default_border pixel 1
-default_floating_border normal 1
-gaps inner 10
+default_border pixel 3
+default_floating_border normal 3
+hide_edge_borders smart
 
 # modes ------------------------------------------------------------------------------------------
 set $power_options (1) Shutdown, (2) Restart
@@ -166,7 +166,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+$extra+space focus mode_toggle
 
 # use the mod button to move / resize windows
-# floating_modifier $mod normal
+floating_modifier $mod
 
 # media controls ---------------------------------------------------------------------------------
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +2%
