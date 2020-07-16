@@ -9,7 +9,6 @@ if [ "$EUID" -ne 0 ]
 fi
 
 sudo dnf -y install \
-i3 \
 sddm \
 mesa-dri-drivers \
 polybar \
@@ -20,7 +19,6 @@ firefox \
 vim \
 git \
 tree \
-# thunar \ I'll come back to this
 xclip \
 alsa-lib \
 alsa-utils \
@@ -28,11 +26,39 @@ pulseaudio \
 pulseaudio-utils \
 pavucontrol \
 playerctl \
-# light \ check to make sure this works on X
 google-noto-* \
-# grim \ might be wayland only?
-# slurp \ might be wayland only?
 snapd
+
+sudo dnf install \
+libxcb-devel \
+xcb-util-keysyms-devel \
+xcb-util-devel \
+xcb-util-wm-devel \
+xcb-util-xrm-devel \
+yajl-devel \
+libXrandr-devel \
+startup-notification-devel \
+libev-devel \
+xcb-util-cursor-devel \
+libXinerama-devel \
+libxkbcommon-devel \
+libxkbcommon-x11-devel \
+pcre-devel \
+pango-devel \
+git \
+gcc \
+automake
+
+git clone https://www.github.com/Airblader/i3 i3-gaps && cd i3-gaps
+
+utoreconf --force --install
+rm -rf build/
+mkdir -p build && cd build/
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+
+cd .. && rm -rf i3-gaps
 
 sudo systemctl set-default graphical.target
 sudo systemctl reboot

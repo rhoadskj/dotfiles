@@ -59,7 +59,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-fill ~/img/wallpaper.png
 
 # input ------------------------------------------------------------------------------------------
-exec --no-startup-id xinput set-prop 8 286 -0.8
+exec --no-startup-id xinput set-prop 8 286 -0.875
 
 # window decorations -----------------------------------------------------------------------------
 client.focused              $aqu1 $aqu2 $blk1 $aqu2 $aqu2
@@ -69,7 +69,10 @@ client.urgent               $red1 $red2 $blk1 $red2 $red2
 
 default_border pixel 3
 default_floating_border normal 3
-hide_edge_borders smart
+hide_edge_borders smart_no_gaps
+gaps inner 10
+gaps outer 10
+smart_gaps on
 
 # modes ------------------------------------------------------------------------------------------
 set $power_options (1) Shutdown, (2) Restart
