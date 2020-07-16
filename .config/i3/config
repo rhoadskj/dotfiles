@@ -4,7 +4,7 @@
 # variables --------------------------------------------------------------------------------------
 # 'extra' is used in place of shift, because it is easier on my wrists.
 set $mod Mod4
-set $extra Alt
+set $extra Mod1
 
 set $ws1 "1"
 set $ws2 "2"
@@ -56,7 +56,7 @@ set $music spotify
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # wallpaper --------------------------------------------------------------------------------------
-exec --no-startup-id feh --bg-fill ~/img/wallpaper.pnga
+exec --no-startup-id feh --bg-fill ~/img/wallpaper.png
 
 # input ------------------------------------------------------------------------------------------
 exec --no-startup-id xinput set-prop 8 286 -0.8
@@ -88,7 +88,7 @@ bindsym $mod+f exec $files
 bindsym $mod+s exec $music
 
 # kill your current window.
-bindsym $mod+Backspace kill
+bindsym $mod+BackSpace kill
 
 # show shutdown / restart options.
 bindsym $mod+equal mode "$power_options"
@@ -166,7 +166,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+$extra+space focus mode_toggle
 
 # use the mod button to move / resize windows
-floating_modifier $mod normal
+# floating_modifier $mod normal
 
 # media controls ---------------------------------------------------------------------------------
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +2%
