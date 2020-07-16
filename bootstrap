@@ -21,7 +21,7 @@ vim \
 git \
 tree \
 # thunar \ I'll come back to this
-# wl-clipboard \ need a new clipboard
+xclip \
 alsa-lib \
 alsa-utils \
 pulseaudio \
